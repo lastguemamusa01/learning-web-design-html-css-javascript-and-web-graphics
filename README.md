@@ -98,7 +98,10 @@ SEO specialist - Search Engine Optimization focused on tweaking the site structu
 Multipmedia Produces - sound, video,animation or interactive games. creating multimet elements.
 
 Soft Skills
-
+* excellent communication skills
+* flexibility
+* critical thiking and good judgement
+* a good attitude
 
 
 
