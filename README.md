@@ -104,6 +104,44 @@ Soft Skills
 * a good attitude
 
 
+browsers work differently on macs than windows and linux. also for each brwosers(safari, google chrome, etc)
+
+mobile devices for testing, or use browser to mimic the size or sites that testing multiple screen sizes simulataniously.
+
+ide - color coding, error detection, suggestion to finish.
+
+** User interface and layout tools
+
+* Sketch (sketchapp.com)
+* Adobe XD
+* Figma
+
+** Web graphic creation tools
+
+* Adobe Crweative Cloud suite 
+* photoshop
+* GIMP (open sources)
+* Corel Draw and paintshop pro
+* SumoPaint
+* Pixlr
+
+** A variety of browsers
+
+* Chrome
+* Firefox
+* Ms Edge
+* Safari
+* Opera
+* browsers for mobile phones (ios safary, android brosers, third-party mobile brosers)
+
+** File management and transfer tools
+
+* FTP - to upload file (Filezila, Transmit)
+* Terminal
+* Gygwin (linuxx emulator for windows)
+
+
+
 
 
 
