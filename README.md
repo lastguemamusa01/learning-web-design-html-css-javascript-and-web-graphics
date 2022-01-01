@@ -1,7 +1,7 @@
 # learning-web-design-html-css-javascript-and-web-graphics
 learning web design a beginner’s guide to html, css, javascript and web graphics book resume and practices
 
-Web Design
+## Web Design
 
 wordpress, wix, squarespace, wix, sitebuilder, weebly - option to drage and drop. provides templates
 
@@ -15,7 +15,7 @@ site diagrams, and how the content and data are organized on the server.
 Content Strategist - make sure that every bit of text on a site, from long explanatory text down to the labels on buttons,
 supports the brand identity and marketing goals of the organization. data modeling and content management, planning for content reuse and update schedules.
 
-Designer roles
+## Designer roles
 
 User Experience, Interaction and User Interface design
 
@@ -34,7 +34,7 @@ Interaction Desiger - (goal) make the site as easy, efficient and delightful to 
 (UID)User Itnteface Design - tends to be more narrowly focused on the functional organization of the page as well as the specific tools(buttons, links, menus, etc)
 that users use to navaigate content or accomplish tasks.
 
-UX, UI and Interaction Desingers produces :
+## UX, UI and Interaction Desingers produces :
 
 User Reserach and testing reports - User Centerd design(UCD) - understanding the needs, desires and limitations of users is central to the success of the design of the site or web application. user research(interviews and observations), to gain better undesting. do user testing(to test usability and is for testing if the user is having hard time to found some content or some element)
 
@@ -57,7 +57,7 @@ user flow charts - another method for showing how the parts of a site or applica
 "when the user does this, it triggers that funcion on the server"
 
 
-Visual(graphic) design
+## Visual(graphic) design
 
 visual presentation. graphic designer creates the look and feel of the site(logos, graphics, type, colors, layout and so on)
 site can make good first impression and is consistent with the brand and message of the organization it represents.
@@ -97,7 +97,7 @@ SEO specialist - Search Engine Optimization focused on tweaking the site structu
 
 Multipmedia Produces - sound, video,animation or interactive games. creating multimet elements.
 
-
+Soft Skills
 
 
 
