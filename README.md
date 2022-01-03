@@ -264,3 +264,163 @@ Another benefit is that you can tell your cli- ents that you create “standards
 * The W3C site (w3.org/standards) is the primary resource for all web stan- dards documents.
 
 ### PROGRESSIVE ENHANCEMENT
+
+With a multitude of browsers comes a multitude of levels of support for the web standards. In fact, no browser has implemented all the standards 100%
+Progressive enhancement is one strategy for dealing with unknown browser capabilities (see Note). When designing with progressive enhancement, you start with a baseline experience that makes the content or core functionality available to even the most rudimentary browsers or assistive devices. From there, you layer on more advanced features for the browsers that can handle them. You might finish with some “nice to have” effects, like animation or wrapping text around images in interesting shapes, that enhance the experi- ence for users with the most advanced browsers, but aren’t really critical to the brand or message.
+
+Progressive enhancement is the flip side of an approach to browser diversity called graceful degradation, in which you design the fully enhanced experience first, then create a series of fallbacks for non-supporting browsers. Both methods have their place in modern development. You will find many fallback techniques suggested in this book to be sure less capable browsers are accommodated.
+
+#### Authoring strategy
+
+When an HTML document is written in logical order and its elements are marked up in a meaningful way, it will be usable on the widest range of browsing environments, including the oldest browsers, future brows- ers, and mobile and assistive devices. It may not look exactly the same, but the important thing is that your content is available. It also ensures that search engines like Google will catalog the content correctly
+
+#### Styling strategy
+
+You can create layers of experience simply by taking advantage of the way browsers parse style sheet rules. Without going into too much technical detail, you can write a style rule that makes an element background red, but also include a style that gives it a cool gradient (a blend from one color to another) for browsers that know how to render gradients. Or you can use a cutting-edge CSS selector to deliver certain styles only to cutting-edge browsers. The knowledge that browsers simply ignore prop- erties and rules they don’t understand gives you license to innovate with- out bringing older browsers to their knees. You just have to be mindful of styling the baseline experience first, then adding improvements once the minimum requirements are met.
+
+#### Scripting strategy
+
+As with other web technologies, there are discrepancies in how browsers handle JavaScript (particularly on non-desktop devices), and some users opt to turn it off entirely. The first rule in progressive enhancement is to make sure basic functionality—such as linking from page to page or accomplishing essential tasks like data submission via forms—is intact even when JavaScript is off. In this way, you ensure the baseline experi- ence, and enhance it when JavaScript is available.
+
+There is no better introduction to the progressive enhancement approach than the book Adaptive Web Design: Crafting Rich Experiences with Progressive Enhancement, 2nd Edition, by Aaron Gustafson (New Riders).
+
+## RESPONSIVE WEB DESIGN
+
+Responsive Web Design (RWD) is a strategy for providing appropriate layouts to devices based on the size of the viewport (browser window). The key to Responsive Web Design is serving a single HTML document (with one URL) to all devices, but applying different style sheets based on the screen size in order to provide the most optimized layout for that device
+
+responsive web design example : Media Queries gallery site (mediaqueri.es)
+
+
+Responsive Web Design helps with matters of layout, but it is not a solution to all mobile web design challenges. The fact is that providing the best experi- ences for your users and their chosen device may require optimizations that go beyond adjusting the look and feel. You can better address some problems by using the server to detect the device and its capabilities and then making decisions on what to send back.
+
+For some sites and services, it may be preferable to build a separate mobile site (see the “M-dot Sites” sidebar) with a customized interface and feature set that takes advantage of phone capabilities like geolocation. 
+
+M-dot Sites
+Some companies and services choose to build an entirely separate site, with
+a unique URL, just for mobile devices. M-dot sites (named because their URLs typically begin with “m.” or “mobile.”) offer a reduced set of options and may also include mobile-specific features such as geolocation. A lot of the “extra” stuff (like promotions) from the desktop site is simply stripped away. (It makes you wonder what value it adds on the desktop.) A dedicated mobile site may be the best solution if you know that your mobile users have very different usage patterns than folks seated at a desk.
+
+dot sites are fading away in favor of RWD. Google is helping to speed this process along by encouraging all m-dot sites to migrate to RWD before the launch of their “mobile- first index”
+ 
+ ## one web for all( accessibility)
+ 
+We’ve only addressed visual browsers controlled with mouse pointers or fingertips. It is critical, however, to keep in mind that people access the web in many different ways—with a keyboard, mouse, voice commands, screen readers, Braille output, magnifiers, joysticks, foot pedals, and so on. Web designers must build pages in a manner that creates as few barriers as pos- sible to getting to information, regardless of the user’s ability and the device used to access the web. In other words, you must design for accessibility.
+
+Although intended for users with disabilities such as poor vision or limited mobility, the techniques and strategies developed for accessibility also benefit other users with less-than-optimum browsing experiences. Accessible sites are also more effectively indexed by search engines such as Google. Making your site accessible is well worth the extra effort.
+
+There are four broad categories of disabilities that affect how people interact with their computers and the information on them:
+
+* Vision impairment
+People with low or no vision may use an assistive device such as a screen reader, Braille display, or a screen magnifier to get content from the screen. They may also simply use the browser’s text zoom function to make the text large enough to read.
+* Mobility impairment
+Users with limited or no use of their hands may use special devices such as modified mice and keyboards, foot pedals, voice commands, or joy- sticks to navigate the web and enter information.
+* Auditory impairment
+Users with limited or no hearing will miss out on audio aspects of mul- timedia, so it is necessary to provide alternatives, such as transcripts for audio tracks or captions for video.
+* Cognitive impairment
+Users with memory, reading comprehension, problem solving, and atten- tion limitations benefit when sites are designed simply and clearly. These qualities are helpful to anyone using your site.
+
+
+The W3C started the Web Accessibility Initiative (WAI) to address the need to make the web usable for everyone. The WAI site (www.w3.org/WAI) is an excellent starting point for learning more about web accessibility. One of the documents produced by the WAI to help developers create accessible sites is the Web Content Accessibility Guidelines (WCAG and WCAG 2.0). You can read them all at www.w3.org/WAI/intro/wcag.php.
+
+Another W3C effort is the WAI-ARIA (Accessible Rich Internet Applications) spec, which addresses the accessibility of web applications that include dynamically generated content, scripting, and advanced interface ele- ments that are particularly confounding to assistive devices. 
+
+## the need for speed (site performance)
+
+Although the number of users accessing the internet on slow dial-up connec- tions is shrinking (3–5% in the US as of this writing), the percentage of folks using mobile phones to access the web is increasing dramatically; and for some sectors, such as social media and search, mobile has already exceeded desktop usage. If you have a smartphone, then you know how frustrating it is to wait for a web page to fully display over a cellular data connection.
+
+Site performance is critical regardless of how your users access your site. A study by Google in 20091 showed that the addition of just 100 to 400 milli- seconds to their search results page resulted in reduced searches (–0.2 to –0.6%). Amazon.com showed that reducing page load times by just 100ms resulted in a 1% increase in revenue.2 Other studies show that users expect a site to load in under 2 seconds, and nearly a third of your audience will leave your site for another if it doesn’t. Furthermore, those people aren’t likely to come back. Google has added site speed to its search algorithm, so if your site is a slowpoke, it’s not likely to show up in that coveted first screen of results. The takeaway here is that site performance (down to the millisecond!) mat- ters a lot
+
+There are many things you can do to improve the performance of your site, and they fall under two broad categories: limiting file sizes and reducing the number of requests to the server. The following list only scratches the surface for site optimization, but it gives you a general idea of what can be done:
+
+* Optimize images so they are the smallest file size possible without sacri- ficing quality. You’ll learn image optimization techniques in Chapter 24, Image Asset Production.
+* StreamlineHTMLmarkup,avoidingunnecessarylevelsofnestedelements.
+* Minimize HTML and CSS documents by removing extra character spaces and line returns.
+* Keep JavaScript to a minimum.
+* Add scripts in such a way that they load in parallel with other page assets and don’t block rendering.
+* Don’t load unnecessary assets (such as images, scripts, or JavaScript libraries).
+* Reduce the number of times the browser makes requests of the server (known as HTTP requests).
+ 
+
+If you’d like to see for yourself, you can use the Network tool available with the Developer tools in Chrome, Safari, or Firefox. The Network tool displays each request to the server and how many milliseconds it took
+
+network -> show waterfall chart
+
+Google’s PageSpeed Insights (developers.google.com/ speed/pagespeed/insights/) is another service that analyzes the performance of any site you point it to. It also generates suggestions for making your page load faster.
+
+High Performance Mobile Web: Best Practices for Optimizing Mobile Web Apps by Maximiliano Firtman (O’Reilly) covers optimization methods and tools to check your progress.
+
+Google’s site Make the Web Faster (code.google.com/speed/) is an excellent first stop for learning about site optimization. It compiles a number of excellent tutorials and articles as well as tools for measuring site speed.
+
+
+## Creating a simple page (HTML overview)
+
+### a web page, step-by-step
+
+html naming conventions
+
+Use proper suffixes for your files. HTML files must end with .html or .htm. Web graphics must be labeled according to their file format: .gif, .png, .jpg (.jpeg is also acceptable, although less common), or .svg.
+
+Never use character spaces within filenames. It is common
+to use an underline character or hyphen to visually separate words within filenames, such as robbins_bio.html or robbins- bio.html.
+
+Avoid special characters such as ?, %, #, /, :, ;, •, etc. Limit filenames to letters, numbers, underscores, hyphens, and periods. It is also best to avoid international characters, such as the Swedish å.
+
+Filenames may be case-sensitive, depending on your server configuration. Consistently using all lowercase letters in filenames, although not required, is one way to make your filenames easier to manage.
+
+Keep filenames short. Long names are more likely to be misspelled, and short names shave a few extra bytes off the file size. If you really must give the file a long, multiword name, you can separate words with hyphens, such as a-long-document-title.html, to improve readability.
+
+Self-imposed conventions. It is helpful to develop a consistent naming scheme for huge sites—for instance, always using lowercase with hyphens between words. This takes some of the guesswork out of remembering what you named a file when you go to link to it later.
+
+A tag consists of the ele- ment name (usually an abbreviation of a longer descriptive name) within angle brackets (< >)
+
+The tags added around content are referred to as the markup. It is important to note that an element consists of both the content and its markup (the start and end tags). Not all elements have content, however. Some are empty by definition, such as the img element used to add an image to the page. We’ll talk about empty elements a little later in this chapter.
+
+* I don’t want to confuse things, but the first line in the example isn’t an element at all. It is a document type declaration (also called DOCTYPE declaration) that lets modern browsers know which HTML specification to use to interpret the document. This DOCTYPE identifies the docu- ment as written in HTML5.
+* The entire document is contained within an html element. The html ele- ment is called the root element because it contains all the elements in the document, and it may not be contained within any other element.
+* Within the html element, the document is divided into a head and a body. The head element contains elements that pertain to the document that are not rendered as part of the content, such as its title, style sheets, scripts, and metadata.
+* meta elements provide document metadata, information about the docu- ment. In this case, it specifies the character encoding (a standardized collection of letters, numbers, and symbols) used in the document as Unicode version UTF-8 (see the sidebar “Introducing Unicode”). I don’t want to go into too much detail on this right now, but know that there are many good reasons for specifying the charset in every document, so I have included it as part of the minimal document markup. Other types of metadata provided by the meta element are the author, keywords, publish- ing status, and a description that can be used by search engines.
+* Also in the head is the mandatory title element.According to the HTML specification, every document must contain a descriptive title.
+* Finally, the body element contains everything that we want to show up in the browser window.
+
+In the early days of computing, computers used limited character sets such as ASCII that contained 128 characters (letters from Latin languages, numbers, and common symbols). The early web used the Latin-1 (ISO 8859-1) character encoding that included 256 Latin characters from most Western languages. But given the web was “worldwide,” it was clearly not sufficient.
+Enter Unicode. Unicode (also called the Universal Character Set) is a super-character set that contains over 136,000 characters (letters, numbers, symbols, ideograms, logograms, etc.) from all active modern languages. You can read all about it at unicode.org. Unicode has three standard encodings—UTF-8, UTF-16, and UTF-32—that differ in the number of bytes used to represent the characters (1, 2, or 3, respectively).
+
+Your server also needs to be configured to identify HTML documents as UTF-8 in the HTTP header (information about the document that the server sends to the user agent). You can ask your server administrator to confirm the encoding of the HTML documents.
+
+A title element is not only required for every document, but it is also quite useful. The title is what is displayed in a user’s Bookmarks or Favorites list and on tabs in desktop browsers. Descriptive titles are also
+a key tool for improving accessibility, as they are the first things a person hears when using a screen reader
+(an assistive device that reads the content of a page aloud for users with impaired sight). Search engines rely heavily on document titles as well.
+
+title with less than 20 characters , meaningfull names.
+
+The purpose of HTML is to add meaning and structure to the content. 
+
+Your job when marking up content is to choose the HTML element that pro- vides the most meaningful description of the content at hand. In the biz, we call this semantic markup. For example, the most important heading at the beginning of the document should be marked up as an h1 because it is the most important heading on the page
+
+In addition to adding meaning to content, the markup gives the document structure. The way elements follow each other or nest within one another cre- ates relationships between them. You can think of this structure as an outline (its technical name is the DOM, for Document Object Model)
+
+
+That is because by default, headings and paragraphs display as block elements. Browsers treat block elements as though they are in little rectangular boxes, 
+
+That is because the em element is an inline element (also called a text-level semantic element or phrasing element). Inline elements do not start new lines; they just go with the flow.
+
+All browsers have their own built-in style sheets (called user agent style sheets in the spec) that describe the default rendering of elements. The default rendering is similar from browser to browser (for example, h1s are always big and bold), but there are some variations (the blockquote element for long quotes may or may not be indented).
+
+### empty elements
+
+A handful of elements, however, do not have content because they are used to provide a simple directive. These elements are said to be empty. The image element (img) is an example of an empty element. It tells the browser to get an image file from the server and insert it at that spot in the flow of the text. Other empty elements include the line break (br), thematic breaks (hr, a.k.a. “horizontal rules”), and elements that provide information about a document but don’t affect its displayed content, such as the meta element that we used earlier.
+
+The syntax for an attribute is as follows:
+
+attributename="value"
+
+Attributes go after the element name, separated by a space. In non-empty ele-
+ments, attributes go in the opening tag only:
+
+<element attributename="value">
+<element attributename="value">Content</element>
+
+  You can also put more than one attribute in an element in any order. Just keep them separated with spaces:
+
+  <element attribute1="value" attribute2="value">
+  
+
