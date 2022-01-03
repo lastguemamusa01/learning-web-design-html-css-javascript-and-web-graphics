@@ -421,10 +421,42 @@ ments, attributes go in the opening tag only:
 <element attributename="value">
 <element attributename="value">Content</element>
 ```
+Attributes are instructions that clarify or modify an element.
 
 You can also put more than one attribute in an element in any order. Just keep them separated with spaces:
 
 ```html
 <element attribute1="value" attribute2="value">
 ```  
+
+you may see empty elements
+with extra slashes at the end, like so:<img />,<br />,<meta />, and <hr />. That indicates the document was written according
+to the stricter rules of XHTML.
+
+* Most attributes take values, which follow an equals sign (=). In HTML, some attribute values are single descriptive words. For example, the checked attribute, which makes a form checkbox checked when the form loads, is equivalent to checked="checked". You may hear this type of attribute called a Boolean attribute because it describes a feature that is either on or off.
+*  A value might be a number, a word, a string of text, a URL, or a measure- ment, depending on the purpose of the attribute. You’ll see examples of all of these throughout this book.
+*  Wrapping attribute values in double quotation marks is a strong conven- tion, but note that quotation marks are not required and may be omitted. In addition, either single or double quotation marks are acceptable as long as the opening and closing marks match. Note that quotation marks in HTML files need to be straight ("), not curly (”).
+*  The attribute names and values available for each element are defined in the HTML specifications; in other words, you can’t make up an attribute for an element.
+*  Some attributes are required, such as the src and alt attributes in the img element. The HTML specification also defines which attributes are required in order for the document to be valid.
+
+### VALIDATING YOUR DOCUMENTS
+
+To validate a document is to check your markup to make sure that you have abided by all the rules of whatever version of HTML you are using. Documents that are error-free are said to be valid. It is strongly recommended that you validate your documents, especially for professional sites. Valid documents are more consistent on a variety of browsers, they display more quickly, and they are more accessible.
+
+Instead, use a validator, software that checks your source against the HTML version you specify. These are some of the things validators check for:
+
+* The inclusion of a DOCTYPE declaration. Without it the validator doesn’t know which version of HTML to validate against:
+* An indication of the character encoding for the document.
+* The inclusion of required rules and attributes.
+* Non-standardelements.
+* Mismatchedtags.
+* Nesting errors (incorrectly putting elements inside other elements).
+* Typos and other minor errors.
+
+The best web-based validator is at html5.validator.nu. There you can upload a file or provide a link to a page that is already online.
+
+Built-in browser developer tools for Safari and Chrome also have validators so you can check your work on the fly. Some code editors have validators built in as well.
+
+## Chapter 5 - marking up text
+
 
