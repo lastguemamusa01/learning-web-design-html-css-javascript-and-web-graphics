@@ -411,16 +411,20 @@ A handful of elements, however, do not have content because they are used to pro
 
 The syntax for an attribute is as follows:
 
+```html
 attributename="value"
-
+```
 Attributes go after the element name, separated by a space. In non-empty ele-
 ments, attributes go in the opening tag only:
 
+```html
 <element attributename="value">
 <element attributename="value">Content</element>
+```
 
-  You can also put more than one attribute in an element in any order. Just keep them separated with spaces:
+You can also put more than one attribute in an element in any order. Just keep them separated with spaces:
 
-  <element attribute1="value" attribute2="value">
-  
+```html
+<element attribute1="value" attribute2="value">
+```  
 
