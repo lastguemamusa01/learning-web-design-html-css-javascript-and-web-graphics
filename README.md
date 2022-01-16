@@ -459,4 +459,115 @@ Built-in browser developer tools for Safari and Chrome also have validators so y
 
 ## Chapter 5 - marking up text
 
+I want to reiterate how important it is to choose elements semantically—that is, in a way that most accurately describes the content’s meaning. If you don’t like how it looks, change it with a style sheet. A semantically marked-up document ensures your content is available and accessible in the widest range of browsing environments, from desktop computers and mobile devices to assistive screen readers. It also allows non-human readers, such as search engine indexing programs, to cor- rectly parse your content and make decisions about the relative importance of elements on the page.
 
+### Paragraphs
+
+```html
+<p>...</p>
+```
+
+Visual browsers nearly always display paragraphs on new lines with a bit of space between them by default (to use a term from CSS, they are displayed as a block). Paragraphs may contain text, images, and other inline elements (called phrasing content), but they may not contain headings, lists, sectioning elements, or any elements that typically display as blocks by default.
+
+### headings
+
+When you add headings to content, the browser uses them to cre- ate a document outline for the page. Assistive reading devices such as screen readers use the document outline to help users quickly scan and navigate through a page. In addition, search engines look at heading levels as part of their algorithms (information in higher heading levels may be given more weight).
+
+```html
+ <h1>...</h1>
+ <h2>...</h2>
+ <h3>...</h3>
+ <h4>...</h4>
+ <h5>...</h5>
+ <h6>...</h6>
+```
+
+### THEMATIC BREAKS (HORIZONTAL RULE)
+
+If you want to indicate that one topic has completed and another one is beginning, you can insert what the spec calls a “paragraph-level thematic break” with the hr element. The hr element adds a logical divider between sections of a page or paragraphs without introducing a new heading level.
+
+In older HTML versions, hr was defined as a “horizontal rule” because it inserts a horizontal line on the page. Browsers still render hr as a 3-D shaded rule and put it on a line by itself with some space above and below by default; but in the HTML5 spec, it has a new semantic name and definition. If a deco- rative line is all you’re after, it is better to create a rule by specifying a colored border before or after an element with CSS.
+
+
+```html
+<hr>
+```
+
+### Lists
+
+Unordered lists
+  Collections of items that appear in no particular order
+
+Just about any list of examples, names, components, thoughts, or options qualifies as an unordered list. In fact, most lists fall into this category. By default, unordered lists display with a bullet before each list item, but you can change that with a style sheet, as you’ll see in a moment.
+
+
+```html
+<ul>
+  <li>Serif</li> 
+  <li>Sans-serif</li> 
+  <li>Script</li> 
+  <li>Display</li> 
+  <li>Dingbats</li>
+</ul>
+```
+
+Ordered lists
+  Lists in which the sequence of the items is important
+
+Ordered lists are for items that occur in a particular order, such as step-by- step instructions or driving directions. 
+
+```html
+<ol>
+  <li>Gutenberg develops moveable type (1450s)</li> 
+  <li>Linotype is introduced (1890s)</li> 
+  <li>Photocomposition catches on (1950s)</li> 
+  <li>Type goes digital (1980s)</li>
+</ol>
+```
+
+If you want a numbered list to start at a number other than 1, you can use the start attribute in the ol element to specify another starting number, as shown here:
+
+```html
+<ol start="17">
+```
+
+Nesting Lists
+
+```html
+<ol>
+    <li></li>
+    <li>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+  </li> 
+</ol>
+```
+
+You can use the list-style-type style sheet property to change the bullets and numbers for lists.
+
+Description lists
+  Lists that consist of name and value pairs, including but not limited to terms and definitions
+
+
+<dl>...</dl>
+A description list
+<dt>...</dt>
+A name, such as a term or label
+<dd>...</dd>
+A value, such as a description or definition
+
+Description lists are used for any type of name/value pairs, such as terms and their definitions, questions and answers, or other types of terms and their associated information
+
+
+```html
+<dl>
+  <dt>Linotype</dt>
+  <dd>Line-casting allowed type to be selected, used, then recirculated into the machine automatically. This advance increased the speed of typesetting and printing dramatically.</dd>
+  <dt>Serif examples</dt> 
+  <dd>Baskerville</dd> 
+  <dd>Goudy</dd>
+<dl>
+```
