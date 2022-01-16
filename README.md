@@ -571,3 +571,186 @@ Description lists are used for any type of name/value pairs, such as terms and t
   <dd>Goudy</dd>
 <dl>
 ```
+
+### Long Quotations
+
+If you have a long quotation, a testimonial, or a section of copy from another source, mark it up as a blockquote element. It is recommended that content within blockquote elements
+
+```html
+ <blockquote>
+  <p>Our alphabet hasn't changed in eons; there isn't much latitude in what a designer can do with the individual letters.</p>
+  <p>Much like a piece of classical music, the score is written down. It's not something that is tampered with, and yet, each conductor interprets that score   differently. There is tension in the interpretation.</p>
+</blockquote>
+```
+
+There is also the inline element q for short quotations in the flow of text. We’ll talk about it later in this chapter.
+
+### Preformatted Text
+
+In the previous chapter, you learned that browsers ignore whitespace such as line returns and character spaces in the source document. But in some types of information, such as code examples or certain poems, the whitespace is important for conveying meaning. For content in which whitespace is seman- tically significant, use the preformatted text (pre) element. It is a unique ele- ment in that it is displayed exactly as it is typed—including all the carriage returns and multiple character spaces
+
+The white-space:pre CSS property can also be used to preserve spaces and returns in the source.
+
+```html
+<pre>
+This is       an    example of
+      text with a lot of
+              whitespace.
+</pre>  
+```
+
+### Figures
+
+The figure element identifies content that illustrates or supports some point in the text. A figure may contain an image, a video, a code snippet, text, or even a table—pretty much anything that can go in the flow of web content. Content in a figure element should be treated and referenced as a self- contained unit. That means if a figure is removed from its original placement in the main flow (to a sidebar or appendix, for example), both the figure and the main flow should continue to make sense.
+
+Although you can simply add an image to a page, wrapping it in figure tags makes its purpose explicitly clear semantically. It also works as a hook for applying special styles to figures but not to other images on the page:
+
+If you want to provide a text caption for the figure, use the figcaption ele- ment above or below the content inside the figure element.
+
+```html
+<figure>
+  <img src="piechart.png" alt="chart showing fonts on mobile devices">
+</figure>
+
+<figure>
+  <pre> 
+    <code>
+      body {
+        background-color: #000;
+        color: red;
+      }
+      </code>
+  </pre>
+  <figcaption>Sample CSS rule.</figcaption>
+</figure>
+```
+
+### Organizing page content
+
+So far, the elements we’ve covered handle very specific tidbits of content: a paragraph, a heading, a figure, and so on. Prior to HTML5, there was no way to group these bits into larger parts other than wrapping them in a generic division (div) element (I’ll cover div in more detail later). 
+
+HTML5 introduced new elements that give semantic meaning to sections of a typical web page or application (see Note), including main content (main), headers (header),footers (footer), sections (section), articles (article), navigation (nav), and tan- gentially related or complementary content (aside). Curiously, the spec lists the old address element as a section as well, so we’ll look at that one here too.
+
+Nearly all browsers today support the HTML5 semantic elements, and for those that don’t, creating a style sheet rule that tells browsers to format each one as a block- level element is all you need to make them behave correctly
+
+Unfortunately, that fix won’t work for the small fraction of users who are still using Internet Explorer versions 8 and earlier (less than 1.5% of browser traffic as of 2017)
+
+he solution is to use JavaScript to create each element so IE knows it exists and will allow nesting and styling. Here’s what a JavaScript command creating the section element looks like:
+
+    documencreateElement("section");
+
+Fortunately, Remy Sharp wrote a script that creates all of the HTML5 elements for IE8 and earlier in one fell swoop. It is called “HTML5 Shiv” (or Shim) and it is available on a server that you can point to in your documents. Just copy this code in the head of your document and use a style sheet to style the new elements as blocks:
+
+<!--[if lt IE 9]> → <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/ html5shiv.min.js">
+</script >
+<![endif]-->
+
+The HTML5 Shiv is also part of the Modernizr polyfill script that adds HTML5 and CSS3 functionality to older non-supporting browsers
+
+### Main Content
+
+Use the main element to identify the primary content of a page or application. The content of a main element should be unique to that page.
+
+```html
+<body> <header>...</header> <main>
+  <h1>Humanist Sans Serif</h1>
+  <!-- code continues -->
+</main>
+</body>
+```
+
+The W3C HTML5 specification states that pages should have only one main section and that it should not be nested within an article, aside, header, footer, or nav. Doing so will cause the document to be invalid.
+
+### Headers and Footers
+
+The header element is used for introductory material that typically appears at the beginning of a web page or at the top of a section or article (we’ll get to those elements next). There is no specified list of what a header must or should contain; anything that makes sense as the introduction to a page or section is acceptable. In the following example, the document header includes a logo image, the site title, and navigation:
+
+```html
+<body>
+<header>
+  <img src="/images/logo.png" alt="logo"> 
+  <h1>Nuts about Web Fonts</h1>
+  <nav> 
+    <ul>
+      <li><a href="/">Home</a></li> <li><a href="/">Blog</a></li> <li><a href="/">Shop</a></li>
+    </ul> 
+  </nav>
+</header>
+<!--page content-->
+</body>
+```
+
+When used in an individual article, the header might include the article title, author, and the publication date, as shown here:
+
+```html
+<article>
+  <header>
+    <h1>More about WOFF</h1>
+    <p>by Jennifer Robbins, <time datetime="2017-11-11">November 11, 2017</time></p>
+  </header>
+  <!-- article content here -->
+</article>
+```
+Neither header nor footer elements are permitted to contain nested header or footer elements.
+
+The footer element is used to indicate the type of information that typi- cally comes at the end of a page or an article, such as its author, copyright information, related documents, or navigation. The footer element may apply to the entire document, or it could be associated with a particular section or article. If the footer is contained directly within the body element, either before or after all the other body content, then it applies to the entire page or application. If it is contained in a sectioning element (section, article, nav, or aside), it is parsed as the footer for just that section. 
+
+```html
+<article>
+    <header>
+      <h1>h1 header</h1>
+      <p>by Jennifer Robbins, <time datetime="2017-11-11">November 11, 2017</time></p>
+  </header>
+  <!-- article content here -->
+  <footer>
+    <p><small>Copyright &copy;2017 Jennifer Robbins.</small></p>
+    <nav> 
+      <ul>
+        <li><a href="/">Previous</a></li>
+        <li><a href="/">Next</a></li> 
+      </ul>
+    </nav>
+  </footer>
+</article>
+```
+
+### Sections and Articles
+
+Long documents are easier to use when they are divided into smaller parts. For example, books are divided into chapters, and newspapers have sections for local news, sports, comics, and so on. To divide long web documents into thematic sections, use the aptly named section element. Sections typically include a heading (inside the section element) plus content that has a mean- ingful reason to be grouped together.
+
+The section element has a broad range of uses, from dividing a whole page into major sections or identifying thematic sections within a single article. In the following example, a document with information about typography resources has been divided into two sections based on resource type:
+
+```html
+<section>
+  <h2>Typography Books</h2> 
+  <ul>
+   <li>...</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Online Tutorials</h2>
+  <p>These are the best tutorials on the web.</p> 
+  <ul>
+    <li>...</li>
+  </ul>
+</section>
+```
+
+The HTML5 spec recommends that if the purpose for grouping the elements is simply to provide a hook for styling, use the generic div element instead.
+
+Use the article element for self-contained works that could stand alone or be reused in a different context (such as syndication). It is useful for maga- zine or newspaper articles, blog posts, comments, or other items that could be extracted for external use. You can think of it as a specialized section ele- ment that answers “yes” to the question “Could this appear on another site and make sense?”
+
+```html
+<article>
+  <h1>Get to Know Helvetica</h1> 
+  <section>
+    <h2>History of Helvetica</h2>
+    <p>...</p>
+  </section>
+  <section>
+    <h2>Helvetica Today</h2> <p>...</p>
+  </section>
+</article>
+```
+
