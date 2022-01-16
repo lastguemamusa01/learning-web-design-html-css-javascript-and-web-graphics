@@ -841,10 +841,481 @@ Emphasized text (em) elements nearly always display in italics by default (FIGUR
 The strong element indicates that a word or phrase is important, serious, or urgent.
 Visual browsers typically display strong text elements in bold text by default. Screen readers may use a distinct tone of voice for important content, mark text as strong only when it makes sense semantically, not just to make text bold.
 
-
 ```html
 <p><em>Arlo</em> is very smart.</p>
 <p>When returning the car, <strong>drop the keys in the red box by the front desk</strong>.</p>
 ```
 
+obsolete or deplecate from html 4.01, dont use this tags : acronym, applet, basefont, big, center, dir (directory), font, isindex (search box), menu, strike, tt (teletype)
+
+## Elements originally named for their presentational properties
+
+As long as we’re talking about bold and italic text, let’s see what the old b and i elements are up to now. The elements b, i, u, s, and small were intro- duced in the old days of the web as a way to provide typesetting instructions (bold, italic, underline, strike-through, and smaller text, respectively). Despite their original presentational purposes, these elements have been included in HTML5 and given updated, semantic definitions based on patterns of how they’ve been used. Browsers still render them by default as you’d expect (FIGURE 5-10). However, if a type style change is all you’re after, using a style sheet rule is the appropriate solution. Save these for when they are semanti- cally appropriate.
+
+b
+Keywords, product names, and other phrases that need to stand out from the surrounding text without conveying added importance or emphasis (see Note). [Old definition: Bold]
+CSS Property: For bold text, use font-weight. Example: font-weight: bold;
+
+i
+Indicates text that is in a different voice or mood than the surrounding text, such as a phrase from another language, a technical term, or a thought. [Old definition: Italic]
+CSS Property: For italic text, use font-style. Example: font-style: italic;
+
+s
+Indicates text that is incorrect. [Old definition: Strike-through text]
+CSS Property: To draw a line through a selection of text, use text-decoration.
+Example: text-decoration: line-through
+
+u
+There are a few instances when underlining has semantic significance, such as underlining a formal name in Chinese or indicating a misspelled word after a spell check, such as the misspelled “Helvitica” in the following example. Note that underlined text is easily confused with a link and should generally be avoided except for a few niche cases. [Old definition: Underline]
+CSS Property: For underlined text, use text-decoration. Example: text- decoration: underline
+
+
+small
+Indicates an addendum or side note to the main text, such as the legal “small print” at the bottom of a document. [Old definition: Renders in font smaller than the surrounding text]
+CSS Property: To make text smaller, use font-size. Example: font-size: 80%
+
+
+### Short quotations
+
+Use the quotation (q) element to mark up short quotations, such as “To be or not to be,” in the flow of text, as shown in this exampl
+
+```html
+<p>Matthew Carter says, <q>Our alphabet hasn't changed in eons.</q></p>
+```
+
+### Abbreviations and acronyms
+
+Marking up acronyms and abbreviations with the abbr element provides useful information for search engines, screen readers, and other devices. Abbreviations are shortened versions of a word ending in a period (“Conn.” for “Connecticut,” for example). Acronyms are abbreviations formed by the first letters of the words in a phrase (such as NASA or USA). The title attribute provides the long version of the shortened term
+
+acronym(deprecated) X -> abbr O
+
+```html
+<abbr title="Points">pts.</abbr>
+<abbr title="American Type Founders">ATF</abbr>
+```
+
+### Citations
+
+The cite element is used to identify a reference to another document, such as a book, magazine, article title, and so on. Citations are typically rendered in italic text by default
+
+```html
+<p>Passages of this article were inspired by <cite>The Complete Manual of Typography</cite> by James Felici.</p>
+```
+
+### Defining terms
+
+It is common to point out the first and defining instance of a word in a docu- ment in some fashion. In this book, defining terms are set in blue text. In HTML, you can identify them with the dfn element and format them visually using style sheets.
+
+```html
+<p><dfn>Script typefaces</dfn> are based on handwriting.</p>
+```
+
+### Program code elements
+
+A number of inline elements are used for describing the parts of technical documents, such as code (code), variables (var), program samples (samp), and user-entered keyboard strokes (kbd).
+
+Code, sample, and keyboard elements typically render in a constant-width (also called monospace) font such as Courier by default. Variables usually render in italics.
+
+<code>...</code>
+Code
+
+<var>...</var>
+Variable
+
+<samp>...</samp>
+Program sample
+
+<kbd>...</kbd>
+User-entered keyboard strokes
+
+
+### Subscript and superscript
+
+The subscript (sub) and superscript (sup) elements cause the selected text to display in a smaller size, positioned slightly below (sub) or above (sup) the baseline. These elements may be helpful for indicating chemical formulas or mathematical equations.
+
+```html
+<p>H<sub>2</sub>0</p> 
+<p>E=MC<sup>2</sup></p>
+```
+
+### Highlighted text
+
+The mark element indicates a word that may be considered especially relevant to the reader. One might use it to dynamically highlight a search term in a page of results, to manually call attention to a passage of text, or to indicate the current page in a series. Some designers (and browsers) give marked text a light colored background as though it were marked with a highlighter marker
+
+```html
+<p> ... PART I. ADMINISTRATION OF THE GOVERNMENT. TITLE IX. TAXATION. CHAPTER 65C. MASS. <mark>ESTATE TAX</mark>. Chapter 65C: Sect. 2. Computation of <mark>estate tax</mark>.</p>
+```
+
+### Dates and times
+
+When we look at the phrase “noon on November 4,” we know that it is a date and a time. But the context might not be so obvious to a computer pro- gram. The time element allows us to mark up dates and times in a way that is comfortable for a human to read, but also encoded in a standardized way that computers can use. The content of the element presents the information to people, and the datetime attribute presents the same information in a machine-readable way.
+
+The time element indicates dates, times, or date-time combos. It might be used to pass the date and time information to an application, such as saving an event to a personal calendar. It might be used by search engines to find the most recently published articles. Or it could be used to restyle time informa- tion into an alternate format (e.g., changing 18:00 to 6 p.m.).
+
+
+The datetime attribute specifies the date and/or time information in a stan- dardized time format illustrated in FIGURE 5-14. The full time format begins with the date (year–month–day). The time section begins with a letter “T” and lists hours (on the 24-hour clock), minutes, seconds (optional), and mil- liseconds (also optional). Finally, the time zone is indicated by the number of hours behind (-) or ahead (+) of Greenwich Mean Time (GMT). For example, “-05:00” indicates the Eastern Standard time zone, which is five hours behind GMT.Whenidentifyingdatesandtimesalone,youcanomittheothersections.
+
+![image](https://user-images.githubusercontent.com/25869911/149678392-5ed7828c-1f7d-4a8c-955d-bb9363c43343.png)
+
+
+You can also use the time element with- out the datetime attribute, but its con- tent must be a valid date/time string:
+<time>2016-06-19</time>
+
+* Time only: 9:30 p.m.
+<time datetime="21:30">9:30p.m.</time>
+* Date only: June 19, 2016
+<time datetime="2016-06-19">June 19, 2016</time>
+* Date and time: Sept. 5, 1970, 1:11a.m.
+<time datetime="1970-09-05T01:11:00">Sept. 5, 1970, 1:11a.m.</time>
+* Date and time, with time zone information: 8:00am on July 19, 2015, in
+Providence, RI
+<time datetime="2015-07-19T08:00:00-05:00">July 19, 2015, 8am, Providence RI</time>
+
+### Machine-readable information
+
+
+The data element is another tool for helping computers make sense of con- tent. It can be used for all sorts of data, including dates, times, measurements, weights, microdata, and so on. The required value attribute provides the machine-readable information
+
+```html
+<data value="12">Twelve</data>
+<data value="978-1-449-39319-9">CSS: The Definitive Guide</data>
+```
+### Inserted and deleted text
+
+The ins and del elements are used to mark up edits indicating parts of a doc- ument that have been inserted or deleted (respectively). These elements rely on style rules for presentation (i.e., there is no dependable browser default). Both the ins and del elements can contain either inline or block elements, depending on what type of content they contain:
+
+```html
+<p>Chief Executive Officer: <del title="retired">Peter Pan</del><ins>Pippi Longstocking</ins></p>
+```
+
+### Adding Breaks
+
+#### Line Breaks - br
+
+Occasionally, you may need to add a line break within the flow of text. We’ve seen how browsers ignore line breaks in the source document, so we need a specific directive to tell the browser to “add a line break here.”
+
+The inline line break element (br) does exactly that. The br element could be used to break up lines of addresses or poetry. It is an empty element, which means it does not have content. Just add the br element in the flow of text where you want a break to occur,
+
+```html
+<p>So much depends <br>upon <br><br>a red wheel <br>barrow</p>
+```
+
+don't use <br> to create list look like elements.
+
+#### Word breaks - wbr
+
+The word break (wbr) element lets you mark the place where a word should break (a “line break opportunity” according to the spec) should there not be enough room for the whole word (FIGURE 5-16). It takes some of the guess- work away from the browser and allows authors to control the best spot for the word to be split over two lines. If there is enough room, the word stays in one piece. Without word breaks, the word stays together, and if there is not enough room, the whole word wraps to the next line. Note that the browser does not add a hyphen when the word breaks over two lines. The wbr behaves as though it were a character space in the middle of the word:
+
+```html
+<p>The biggest word you've ever heard and this is how it goes: <em>supercali<wbr>fragilistic<wbr>expialidocious</em>!</p>
+```
+
+The wbr element is not supported by any version of Internet Explorer as of this writ- ing. It is supported in MS Edge.
+
+Accommodating Non-Western Languages
+
+If the web is to reach a truly worldwide audience, it needs
+to be able to support the display of all the languages of the world, with all their unique alphabets, symbols, directionality, and specialized punctuation. The W3C’s efforts for internationalization (often referred to as “i18n” —an i, then 18 letters, then an n) ensure that the formats and protocols defined in web technologies are usable worldwide.
+
+* Using the Unicode character encoding that contains the characters, glyph, symbols, ideographs, and the like from all active, modern languages.
+
+*  Declaring the primary language of a document by using a two- letter language code from the ISO 639-1 standard . example, English is “EN,” Czech is “CS, “and German is “DE.” Use the lang attribute in the html element to declare the language for the whole document, or in individual elements that require clarification.
+
+*  Accommodating the various writing directions of languages. In HTML, the dir attribute explicitly sets the direction for the document or an element to ltr (left-to-right) or rtl (right-to- left). On phrase-level elements, it also creates a bidirectional isolation, preventing text within the element from influencing the ordering of text outside it. (This can be an important consideration when you are embedding user-generated text.)
+
+For example, to include a passage of Hebrew in an English document, use the dir attribute to indicate that the phrase should be displayed right-to-left:
+
+```html
+<p>This is how you write Shalom: 
+<span dir="rtl">םולש</span></p>
+```
+* Providing a system that allows for ruby annotation, notes that typically appear above ideographs from East Asian languages to give pronunciation clues or translations (ruby, rt, and rp elements). See the spec for details if this is something you need to do.
+
+### GENERIC ELEMENTS (DIV AND SPAN)
+
+What if none of the elements we’ve talked about so far accurately describes your content? After all, there are endless types of information in the world, but as you’ve seen, not all that many semantic elements. Fortunately, HTML provides two generic elements that can be customized to describe your content perfectly. The div element indicates a division of content, and span indicates a word or phrase for which no text-level element currently exists.
+
+<div>...</div>
+Generic block-level element
+
+<span>...</span>
+Generic inline element
+
+
+The div and span elements have no inherent presentation qualities of their own, but you can use style sheets to format them however you like. In fact, generic elements are a primary tool in standards-based web design because they enable authors to accurately describe content and offer plenty of “hooks” for adding style rules. They also allow elements on the page to be accessed and manipulated by JavaScript.
+
+#### Divide It Up with a div
+
+Use the div element to create a logical grouping of content or elements on the page. It indicates that they belong together in a conceptual unit or should be treated as a unit by CSS or JavaScript. By marking related content as a div and giving it a unique id or indicating that it is part of a class, you give context to the elements in the grouping
+
+In this example, a div element is used as a container to group an image and two paragraphs into a product “listing”:
+
+```html
+<div class="listing">
+  <img src="images/felici-cover.gif" alt="">
+  <p><cite>The Complete Manual of Typography</cite>, James Felici</p> 
+  <p>A combination of type history and examples of good and bad type design.</p>
+</div>
+```
+
+It is possible to nest div elements within other div elements, but don’t go overboard. You should always strive to keep your markup as simple as possible, so add a div element only if it is necessary for logical structure, styling, or scripting.
+
+```html
+<div id="news">
+  <h1>New This Week</h1>
+  <p>We've been working on...</p> 
+  <p>And last but not least,... </p>
+</div>
+```
+
+#### Define a Phrase with span
+
+A span offers the same benefits as the div element, except it is used for phrase elements and does not introduce line breaks. Because spans are inline ele- ments, they may contain only text and other inline elements (in other words, you cannot put headings, lists, content-grouping elements, and so on, in a span). Let’s get right to some examples.
+
+here is no telephone element, but we can use a span to give meaning to telephone numbers. In this example, each telephone number is marked up as a span and classified as “tel”:
+
+```html
+<ul>
+  <li>John: <span class="tel">999.8282</span></li> 
+  <li>Paul: <span class="tel">888.4889</span></li> 
+  <li>George: <span class="tel">888.1628</span></li> 
+  <li>Ringo: <span class="tel">999.3220</span></li>
+</ul>
+```
+
+You can see how the classified spans add meaning to what otherwise might be a random string of digits. As a bonus, the span element enables us to apply the same style to phone numbers throughout the site (for example, ensuring line breaks never happen within them, using a CSS white-space: nowrap dec- laration). It makes the information recognizable not only to humans but also to computer programs that know that “tel” is telephone number information. In fact, some values—including “tel”—have been standardized in a markup system known as Microformats that makes web content more useful to software
+
+### id and class Attributes
+
+#### Identification with id
+
+The id attribute is used to assign a unique identifier to an element in the document. In other words, the value of id must be used only once in the document. 
+
+Web authors also use id when identifying the various sections of a page. In the following example, there may not be more than one element with the id of “links” or “news” in the document:
+
+
+In HTML5, the values for id and class attributes must contain one character (that is, they may not be empty) and may not contain any character spaces. You can use pretty much any character in the value. Earlier versions of HTML had restrictions on id values (for example, they needed to start with a letter), but those restrictions were removed in HTML5.
+
+```html
+
+<div id="ISBN0321127307">
+  <img src="felici-cover.gif" alt="">
+  <p><cite>The Complete Manual of Typography</cite>, James Felici</p> 
+  <p>A combination of type history and examples of good and bad type. </p>
+</div>
+
+<section id="news">
+  <!-- news items here -->
+</section>
+<aside id="links">
+  <!-- list of links here -->
+</aside>
+```
+
+#### Classification with class
+
+The class attribute classifies elements into conceptual groups; therefore, unlike the id attribute, a class name may be shared by multiple elements. By making elements part of the same class, you can apply styles to all of the labeled elements at once with a single style rule or manipulate them all with a script.
+
+It is also possible for elements to belong to multiple classes. When there is a list of class values, simply separate them with character spaces.
+
+```html
+<div id="ISBN0321127307" class="listing book"> 
+  <header>
+  <img src="felici-cover.gif" alt="">
+  <p><cite>The Complete Manual of Typography</cite>, James Felici</p> 
+  </header>
+  <p class="description">A combination of type history and examples of good and bad type.</p> 
+</div>
+
+<div id="ISBN0881792063" class="listing"> 
+  <header>
+  <img src="bringhurst-cover.gif" alt="">
+  <p><cite>The Elements of Typographic Style</cite>, Robert Bringhurst </p>
+  </header>
+  <p class="description">This lovely, well-written book is concerned foremost with creating beautiful typography.</p>
+</div>
+```
+
+
+
+### Identify and Classify All Elements
+
+HTML5 defines a set of attributes that can be used with every HTML element. They are called the global attributes:
+
+accesskey
+class
+contenteditable
+dir
+draggable
+hidden
+id
+lang
+spellcheck
+style
+tabindex
+title
+translate
+   
+   
+The id and class attributes are not limited to just div and span—they are two of the global attributes (see the “Global Attributes” sidebar) in HTML, which means you may use them with all HTML elements. 
+
+For example, you could identify an ordered list as “directions” instead of wrapping it in a div:
+
+```html
+<ol id="directions"> 
+  <li>...</li> 
+  <li>...</li> 
+  <li>...</li>
+</ol>
+```
+
+This should have given you a good introduction to how to use the class and id attributes to add meaning and organization to documents. 
+
+#### Structured Data in a Nutshell
+
+It is pretty easy for us humans to tell the difference between a recipe and a movie review. For search engines and other computer programs, however, it’s not so obvious. When we use HTML alone, all browsers see is paragraphs, headings, and other semantic elements of a document. Enter structured data! Structured data allows content to be machine-readable as well, which helps search engines provide smarter, user- friendly results and can provide a better user experience—for example, by extracting event information from a page and adding it to the user’s calendar app.
+
+ There are several standards for structured data, but they share a similar approach. First, they identify and name the “thing” being presented. Then they point out the properties of that thing. The “thing” might be a person, an event, a product,
+a movie...pretty much anything you can imagine seeing
+on a web page. Properties consist of name/value pairs. For example, “actor,” “director,” and “duration” are properties of a movie. The values of those properties appear as the content of an HTML element. A collection of the standardized terms assigned to “things,” as well as their respective properties, form what is called a vocabulary.
+
+The most popular standards for adding structured data are Microformats, Microdata, RDFa (and RDFa Lite), and JSON-LD. They differ in the syntax they use to add information about objects and their properties.
+
+##### Microformats
+
+microformats.org
+
+This early effort to make web content more useful created standardized values for the existing id, class, and rel HTML attributes. It is not a documented standard, but it is a convention that is in widespread use because it is very simple to implement. There are about a dozen stable Microformat vocabularies for defining people, organizations, events, products, and more. Here is a short example of how a person might be marked up using Microformats:
+
+```html
+<div class="h-card">
+  <p class="p-name">Cindy Sherman</p> 
+  <p class="p-tel">555.999-2456</p>
+</div>
+```
+
+##### Microdata
+
+html.spec.whatwg.org/multipage/microdata.html
+
+Microdata is a WHATWG (Web Hypertext Application Technology Working Group) HTML standard that uses microdata-specific attributes (itemscope, itemtype, itemprop, itemid, and itemref) to define objects and their properties. Here is an example of a person defined using Microdata.
+
+```html
+<div itemscope itemtype="http://schema.org/Person"> 
+  <p itemprop="name">Cindy Sherman</p>
+  <p itemprop="telephone">555.999-2456</p>
+</div>
+```
+
+##### RDFa and RDFa Lite
+
+www.w3.org/TR/xhtml-rdfa-primer/
+
+The W3C dropped Microdata from the HTML5 spec in 2013, putting all of its structured data efforts behind RDFa (Resource Description Framework in Attributes) and its simplified subset, RDFa Lite. It uses specified attributes (vocab, typeof, property, resource, and prefix) to enhance HTML content. Here is that same person marked up with RDFa:
+
+```html
+<div vocab="http://schema.org" typeof="Person"> 
+  <p property="name">Cindy Sherman</p>
+  <p property="telephone">555.999-2456</p>
+</div>
+```
+
+##### JSON-LD
+
+json-ld.org
+
+JSON-LD (JavaScript Object Notation to serialize Linked Data) is a different animal in that it puts the object types and their properties in a script removed from the HTML markup. Here is the JSON-LD version of the same person:
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/", 
+  "@type": "Person",
+  "name": "Cindy Sherman" 
+  "telephone": "555.999-2456"
+} </script>
+```
+
+It is possible to make up your own vocabulary for use on
+your sites, but it is more powerful to use a standardized vocabulary. The big search engines have created Schema.org, a mega-vocabulary that includes standardized properties for hundreds of “things” like blog posts, movies, books, products, reviews, people, organizations, and so on. Schema.org vocabularies may be used with Microdata, RDFa, and JSON-LD (Microformats maintain their own separate vocabularies). You can see pointers to the Schema.org “Person” vocabulary in the preceding examples. For more information, the Schema.org “Getting Started” page provides an easy-to-read introduction: schema.org/docs/gs.html.
+
+### IMPROVING ACCESSIBILITY WITH ARIA
+
+As web designers, we must always consider the experience of users with assis- tive technologies for navigating pages and interacting with web applications. Your users may be listening to the content on the page read aloud by a screen reader and using keyboards, joysticks, voice commands, or other non-mouse input devices to navigate through the page.
+
+Many HTML elements are plainly understood when you look at (or read) only the HTML source. Elements like the title, headings, lists, images, and tables have implicit meanings in the context of a page, but generic elements like div and span lack the semantics necessary to be interpreted by an assis- tive device. In rich web applications, especially those that rely heavily on JavaScript and AJAX (see Note), the markup alone does not provide enough clues as to how elements are being used or whether a form control is cur- rently selected, required, or in some other state.
+
+Fortunately, we have ARIA (Accessible Rich Internet Applications), a stan- dardized set of attributes for making pages easier to navigate and interactive features easier to use. The specification was created and is maintained by a Working Group of the Web Accessibility Initiative (WAI), which is why you also hear it referred to as WAI-ARIA. ARIA defines roles, states, and proper- ties that developers can add to markup and scripts to provide richer semantic information.
+
+
+#### Roles
+
+Roles describe an element’s function or purpose in the context of the docu- ment. Some roles include alert, button, dialog, slider, and menubar, to name only a few. 
+
+For example, as we saw earlier, you can turn an unordered list into a tabbed menu of options using style sheets, but what if you can’t see that it is styled that way? Adding role="toolbar" to the list makes its purpose clear:
+
+Here’s another example that reveals that the “status” div is used as an alert message:
+
+```html
+<ul id="tabs" role="toolbar"> 
+  <li>A-G</li>
+  <li>H-O</li>
+  <li>P-T</li>
+  <li>U-Z</li>
+</ul>
+
+<div id="status" role="alert">You are no longer connected to the server.</div>
+```
+
+Some roles describe “landmarks” that help readers find their way through the document, such as navigation, banner, contentinfo, complementary, and main. You may notice that some of these sound similar to the page-structuring elements that were added in HTML5, and that’s no coincidence. One of the benefits of having improved semantic section elements is that they can be used as landmarks, replacing <div id="main" role="main"> with main.
+  
+Most current browsers already recognize the implicit roles of the new ele- ments, but some developers explicitly add ARIA roles until all browsers comply. The sectioning elements pair with the ARIA landmark roles in the following way:
+
+  The banner role is used when the header applies to only the whole page, not just a section or article.
+  
+```html
+<nav role="navigation">
+<header role="banner"> (seeNote)
+<main role="main">
+<aside role="complementary"> 
+<footer role="contentinfo">
+```
+  
+####  States and Properties
+  
+ARIA also defines a long list of states and properties that apply to interactive elements such as form widgets and dynamic content. States and properties are indicated with attributes prefixed with aria-, such as aria-disabled, aria-describedby, and many more.
+
+The difference between a state and property is subtle. For properties, the value of the attribute is more likely to be stable, such as aria-labelledby, which associates labels with their respective form controls, or aria-haspopup, which indicates the element has a related pop-up menu. States have values that are more likely to be changed as the user interacts with the element, such as aria-selected.
+
+#### For Further Reading
+
+* The WAI-ARIA Working Draft (www.w3.org/TR/wai-aria-1.1/)
+  This is the current Working Draft of the specification as of this writing.
+
+* ARIA in HTML (www.w3.org/TR/html-aria/)
+  This W3C Working Draft helps developers use ARIA attributes with HTML correctly. It features a great list of every HTML element, whether it has an implicit role (in which ARIA should not be used), and what roles, states, and properties apply.
+
+* ARIA Resources at MDN Web Docs (developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+This site features lots of links to ARIA-related and up-to-date resources. It is a good starting point for exploration.
+
+* HTML5 Accessibility (www.html5accessibility.com)
+This site tests which new HTML5 features are accessibly supported by major browsers.
+ 
+The W3C HTML specification now lists which ARIA roles and properties apply in the descriptions of every HTML element (www.w3.org/TR/ html52/).
+
+### CHARACTER ESCAPES
+  
+  
+You already know that as a browser parses an HTML document, when it runs into a < symbol, it interprets it as the beginning of a tag. But what if you just need a less-than symbol in your text? Characters that might be misinter- preted as code need to be escaped in the source document. Escaping means that instead of typing in the character itself, you represent it by its numeric or named character entity reference. When the browser sees the character reference, it substitutes the proper character in that spot when the page is displayed.
+
+There are two ways of referring to (escaping) a specific character:
+                                                                                         
+* Using a predefined abbreviated name for the character (called a named entity; see Note).
+* Using an assigned numeric value that corresponds to its position in a coded character set (numeric entity). Numeric values may be in decimal or hexadecimal format.
+ 
+HTML defines hundreds of named enti- ties as part of the markup language, which is to say you can’t make up your own entity.
+
+All character references begin with an & (ampersand) and end with a ; (semi- colon).
+                                                                                         
+                                                                                         
 
