@@ -741,6 +741,8 @@ The HTML5 spec recommends that if the purpose for grouping the elements is simpl
 
 Use the article element for self-contained works that could stand alone or be reused in a different context (such as syndication). It is useful for maga- zine or newspaper articles, blog posts, comments, or other items that could be extracted for external use. You can think of it as a specialized section ele- ment that answers “yes” to the question “Could this appear on another site and make sense?”
 
+Conversely, a section in a web document might be composed of a number of articles:
+
 ```html
 <article>
   <h1>Get to Know Helvetica</h1> 
@@ -752,5 +754,97 @@ Use the article element for self-contained works that could stand alone or be re
     <h2>Helvetica Today</h2> <p>...</p>
   </section>
 </article>
+
+<section id="essays">
+  <article>
+    <h1>A Fresh Look at Futura</h1> <p>...</p>
+  </article>
+  <article>
+    <h1>Getting Personal with Humanist</h1> <p>...</p>
+  </article>
+</section>
 ```
+
+The section and article elements are easily confused, particularly because it is possible to nest one in the other and vice versa. Keep in mind that if the content is self-contained and could appear outside the current context, it is best marked up as an article.
+
+### Aside (Sidebars)
+
+The aside element identifies content that is separate from, but tangentially related to, the surrounding content. In print, its equivalent is a sidebar, but it couldn’t be called “sidebar” because putting something on the “side” is a presentational description, not semantic. Nonetheless, a sidebar is a good mental model for using the aside element. aside can be used for pull quotes, background information, lists of links, callouts, or anything else that might be associated with (but not critical to) a document.
+
+In this example, an aside element is used for a list of links related to the main article:
+
+```html
+<h1>Web Typography</h1>
+<p>Back in 1997, there were competing font formats and tools for making them...</p>
+<p>We now have a number of methods for using beautiful fonts on web pages...</p>
+<aside>
+  <h2>Web Font Resources</h2> 
+  <ul>
+    <li><a href="http://typekit.com/">Typekit</a></li>
+    <li><a href="http://fonts.google.com">Google Fonts</a></li> 
+  </ul>
+</aside>
+```
+
+The aside element has no default rendering, so you will need to make it a block element and adjust its appearance and layout with style sheet rules.
+
+### Navigation 
+
+The nav element gives developers a semantic way to identify navigation for a site. Earlier in this chapter
+
+```html
+<nav>
+  <ul>
+    <li><a href="/">Serif</a></li> 
+    <li><a href="/">Sans-serif</a></li> 
+    <li><a href="/">Script</a></li> 
+    <li><a href="/">Display</a></li> 
+    <li><a href="/">Dingbats</a></li>
+  </ul>
+</nav>
+```
+
+### Addresses
+
+he address element that is used to create an area for contact information for the author or maintainer of the document. It is gener- ally placed at the end of the document or in a section or article within a docu- ment. An address would be right at home in a footer element.
+
+```html
+<address>
+Contributed by <a href="../authors/robbins/">Jennifer Robbins</a>, 
+<a href="http://www.oreilly.com/">O'Reilly Media</a>
+</address>
+```
+
+Document Outlines
+
+Behind the scenes, browsers look at the markup in a document and generate a hierarchical outline based on the headings in the content
+
+In past versions of HTML, that was the only way the outline was created. HTML5 introduced a new outline algorithm that enables authors to explicitly add a new section to the outline by inserting a sectioning element: article, section, aside, and nav. In addition to the four sectioning elements, the spec defines some elements (blockquote, fieldset, figure, dialog, details, and td) as sectioning roots, which means headings in those elements do not become part of the overall document outline.
+
+### The inline element roundup
+
+Now that we’ve identified the larger chunks of content, we can provide semantic meaning to phrases within the chunks by using what the HTML5 specification calls text-level semantic elements. On the street, you are likely to hear them called inline elements because they display in the flow of text by default and do not cause any line breaks. That’s also how they were referred to in HTML versions prior to HTML5.
+
+
+![image](https://user-images.githubusercontent.com/25869911/149677596-875b7e46-7c21-444a-88c9-1d054c021eb2.png)
+
+
+
+### Emphasized text - em
+
+Use the em element to indicate which part of a sentence should be stressed or emphasized.
+
+Emphasized text (em) elements nearly always display in italics by default (FIGURE 5-9), but of course you can make them display any way you like with a style sheet. Screen readers may use a different tone of voice to convey stressed content, which is why you should use an em element only when it makes sense semantically, not just to achieve italic text.
+
+### Important text - strong
+
+The strong element indicates that a word or phrase is important, serious, or urgent.
+Visual browsers typically display strong text elements in bold text by default. Screen readers may use a distinct tone of voice for important content, mark text as strong only when it makes sense semantically, not just to make text bold.
+
+
+```html
+<p><em>Arlo</em> is very smart.</p>
+<p>When returning the car, <strong>drop the keys in the red box by the front desk</strong>.</p>
+```
+
 
