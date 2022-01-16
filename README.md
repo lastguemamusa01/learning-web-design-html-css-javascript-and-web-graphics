@@ -1317,5 +1317,47 @@ HTML defines hundreds of named enti- ties as part of the markup language, which 
 
 All character references begin with an & (ampersand) and end with a ; (semi- colon).
                                                                                          
-                                                                                         
+ Symnbol <                                                                                         
+ I’d like to use a less-than symbol in my text, so I must use the named entity (&lt;) or its numeric equivalent (&#060;)
 
+```html
+<p>3 tsp. &lt; 3 Tsp.</p>
+```
+  
+#### When to Escape Characters
+  
+##### HTML syntax characters
+  
+The <, >, &, ", and ' characters have special syntax meaning in HTML, and may be misinterpreted as code. Therefore, the W3C recommends that you escape <, >, and & characters in content. If attribute values contain single or double quotes, escaping the quote characters in the values is advised. 
+
+
+![image](https://user-images.githubusercontent.com/25869911/149680546-c5f29ba0-2a02-4809-91fa-8d7116d85ee1.png)
+
+  
+#### Invisible or ambiguous characters
+
+Some characters have no graphic display and are difficult to see in the markup (TABLE 5-3). These include the non-breaking space (&nbsp;), which is used to ensure that a line doesn’t break between two words. So, for instance, if I mark up my name like this:
+
+Jennifer&nbsp;Robbins
+
+Another use for non-breaking spaces is to separate digits in a long number, such as 32 000 000.
+Zero-width space can be placed in languages that do not use spaces between words to indicate where the line should break. A zero-width joiner is a non-printing space that causes neighboring characters to display in their connected forms (common in Arabic and Indic languages). Zero-width non- joiners prevent neighboring characters from joining to form ligatures or other connected forms.
+
+![image](https://user-images.githubusercontent.com/25869911/149680564-36c50640-2897-419f-9eaf-d2aef541c3f4.png)
+  
+  
+##### Input limitations
+  
+If your keyboard or editing software does not include the character you need (or if you simply can’t find it), you can use a character entity to make sure you get the character you want. The W3C doesn’t endorse this practice, so use the proper character in your source if you are able. TABLE 5-4 lists some special characters that may be less straightforward to type into the source.
+  
+You can also upload it to validator.nu and make sure it is valid (it’s a great way to spot mistakes).
+  
+![image](https://user-images.githubusercontent.com/25869911/149680575-9a148abe-62ff-4a19-a6e2-0bf8deb13ea1.png)
+
+  
+cheatsheet
+  
+![image](https://user-images.githubusercontent.com/25869911/149680590-4c233179-25d3-49fa-9865-b6aa7a9d65db.png)
+
+  
+### Chapter 6 - Adding Links
